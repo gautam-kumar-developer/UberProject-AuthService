@@ -15,13 +15,12 @@ import java.util.List;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Driver extends BaseModel{
+public class Driver extends BaseModel {
 
+    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
+    final List<Booking> bookingList = new ArrayList<>();
     @Column(nullable = false)
     private String name;
     @Column(nullable = false, unique = true)
     private String licenseNumber;
-
-    @OneToMany(mappedBy = "driver", cascade = CascadeType.ALL)
-    final List<Booking> bookingList = new ArrayList<>();
 }

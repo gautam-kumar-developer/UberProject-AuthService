@@ -11,7 +11,7 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Booking extends BaseModel{
+public class Booking extends BaseModel {
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
     private Review review;
 
