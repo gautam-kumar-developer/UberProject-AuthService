@@ -19,7 +19,8 @@ public class PassengerDto {
     private Date createdAt;
 
     public static PassengerDto from(Passenger passenger) {
-        PassengerDto dto = PassengerDto.builder()
+
+        return PassengerDto.builder()
                 .id(passenger.getId().toString())
                 .email(passenger.getEmail())
                 .name(passenger.getName())
@@ -27,8 +28,6 @@ public class PassengerDto {
                 .phoneNumber(passenger.getPhoneNumber())
                 .createdAt(passenger.getCreatedAt())
                 .build();
-
-        return dto;
     }
 
 }
